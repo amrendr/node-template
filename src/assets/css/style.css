@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .app-bg {
+    @apply bg-gray-100 dark:bg-slate-800
+  }
+
+  .app-bg-100 {
+    @apply bg-white dark:bg-slate-600
+  }
+
+  .app-bg-200 {
+    @apply bg-gray-100 dark:bg-slate-700 
+  }
+
+  .app-text-primary {
+    @apply text-slate-900 dark:text-white
+  }
+
+  .app-text-secondary {
+    @apply text-slate-500 dark:text-slate-400
+  }
+}
+
+html, body, .h-full-screen {
+  height: 100vh;
+  height: -webkit-fill-available;
+}

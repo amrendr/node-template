@@ -1,0 +1,58 @@
+{
+  "name": "node-template",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "commit": "git-cz",
+    "start": "gulp && nodemon ./src/server.js",
+    "test": "echo 'Setup some test'",
+    "semantic-release": "semantic-release",
+    "build:assets": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amrendr/node-template.git"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "express": "~4.16.1",
+    "express-http-context": "^1.2.4",
+    "forwarded-for": "^1.1.0",
+    "helmet": "^4.6.0",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "^3.0.2",
+    "uuid": "^8.3.2"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "autoprefixer": "^10.4.2",
+    "commitizen": "^4.2.4",
+    "connect-livereload": "^0.6.1",
+    "cssnano": "^5.0.8",
+    "cz-conventional-changelog": "^3.3.0",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-uglify": "^3.0.2",
+    "livereload": "^0.9.3",
+    "nodemon": "^2.0.12",
+    "postcss": "^8.4.6",
+    "postcss-cli": "^9.0.1",
+    "semantic-release": "^19.0.2",
+    "tailwindcss": "^3.0.18",
+    "uglify-js": "^3.14.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}

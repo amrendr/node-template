@@ -1,0 +1,40 @@
+name: Build, Test, and Tag
+
+on:
+  push:
+    branches: '**'
+
+jobs:
+  build:
+    if: "!contains(github.event.commits[0].message, 'chore(release): :rocket:')"  # to avoid recursive trigger.
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+    
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        persist-credentials: false # https://github.com/semantic-release/semantic-release/discussions/1906
+
+   
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: npm install
+      run: npm install
+        
+    - name: Build assets
+      env:
+        NODE_ENV: production
+      run: gulp
+    
+    - name: Semantic release
+      env:
+        GH_TOKEN: ${{ secrets.GIT_PAT }}  # need personal access token
+      run: npx semantic-release
+        

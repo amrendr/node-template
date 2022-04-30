@@ -1,0 +1,6 @@
+extends layout
+
+block content
+  h1(class='text-4xl app-text-primary') #{message}
+  h2(class='text-2xl app-text-secondary') #{error.status}
+  pre(class=' border border-gray-400 app-bg-100 app-text-secondary p-4 mt-4 whitespace-pre-wrap break-all') #{error.stack}
