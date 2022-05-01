@@ -1,8 +1,6 @@
 ### Building and running the server
 * If you are building the first time `npm install`
-* Using local machine
-  * To start the node server `npm start`
-  * `gulp watch` in another terminal to ensure that client-side JS files have complied automatically after the changes are saved.
+* On local machine, to start the node server and compile and watch static file, Run `npm start`
 * At this point, you should be able to access http://localhost:3000/ to start your test.
 
 ### Helpful extension for VScode

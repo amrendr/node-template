@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "commit": "git-cz",
-    "start": "gulp && nodemon ./src/server.js",
+    "start": "concurrently --names \"Gulp,Watch,Node\" -c \"bgGreen.bold,bgBlue.bold,bgMagenta.bold\" \"gulp\" \"gulp watch\" \"nodemon ./src/server.js\"",
     "test": "echo 'Setup some test'",
     "semantic-release": "semantic-release",
     "build:assets": "gulp"
@@ -36,6 +36,7 @@
     "@semantic-release/git": "^10.0.1",
     "autoprefixer": "^10.4.2",
     "commitizen": "^4.2.4",
+    "concurrently": "^7.1.0",
     "connect-livereload": "^0.6.1",
     "cssnano": "^5.0.8",
     "cz-conventional-changelog": "^3.3.0",
